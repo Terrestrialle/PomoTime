@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400&display=swap"
+      rel="stylesheet"
+    />
+    <script src="script.js" defer></script>
+    <title>PomoTime</title>
+  </head>
+  <body>
+    <main>
+      <div id="title-container">
+        <h1>PomoTime</h1>
+        <p>Help your study session with pomodoro method.</p>
+      </div>
+      <div class="session-container">
+        <button id="pomodoro" class="highlight">Pomodoro</button>
+        <button id="short-break">Short break</button>
+        <button id="long-break">Long break</button>
+      </div>
+      <div class="timer-container">
+        <span id="time-show">25:00</span>
+      </div>
+      <div id="progress-bar-container">
+        <div id="progress-bar"></div>
+      </div>
+      <div class="controls-container">
+        <span id="start-pause" class="material-symbols-outlined"
+          >play_arrow</span
+        >
+        <span id="skip" class="material-symbols-outlined"
+          >arrow_forward_ios</span
+        >
+        <span id="settings" class="material-symbols-outlined">settings</span>
+      </div>
+      <div id="audio-controls">
+        <span id="play-song-button" class="material-symbols-outlined"
+          >play_arrow</span
+        >
+        <p>Play music for entertaining session</p>
+      </div>
+      <audio id="relaxing-audio" loop>
+        <source src="./song-sound/LoFiBedroom.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+      <p style="margin: 10px auto">Powered By Davine</p>
+    </main>
+    <div id="setting-container">
+      <div id="setting-menu">
+        <p id="general-button" class="button-select active">General</p>
+        <p id="timer-button" class="button-select">Timers</p>
+        <p id="sound-button" class="button-select">Sound</p>
+        <p id="stats-button" class="button-select">Stats</p>
+      </div>
+      <div id="setting-menu-content">
+        <!-- General settings content -->
+        <div id="general" class="show-content active">
+          <h1 class="menu-title">General</h1>
+          <label for="input-theme">Select theme: </label>
+          <select name="theme-input" id="input-theme">
+            <option value="dark">Dark Mode</option>
+            <option value="light">Light Mode</option>
+          </select>
+          <p>You can select the given theme we provided</p>
+        </div>
+        <!-- Timer settings content -->
+        <div id="timer-set-container" class="show-content">
+          <h1 class="menu-title">Timers</h1>
+          <div class="set-container">
+            <label>Pomodoro: </label>
+            <div>
+              <input
+                type="number"
+                id="pomodoro-duration"
+                value="25"
+                min="1"
+                max="999"
+              />
+              <p>minutes</p>
+            </div>
+          </div>
+          <div class="set-container">
+            <label>Short Break: </label>
+            <div>
+              <input
+                type="number"
+                id="short-break-duration"
+                value="5"
+                min="1"
+                max="999"
+              />
+              <p>minutes</p>
+            </div>
+          </div>
+          <div class="set-container">
+            <label>Long Break: </label>
+            <div>
+              <input
+                type="number"
+                id="long-break-duration"
+                value="15"
+                min="1"
+                max="999"
+              />
+              <p>minutes</p>
+            </div>
+          </div>
+          <div class="set-container">
+            <label>Pomodoros: </label>
+            <div>
+              <input
+                type="number"
+                id="sessions-before-long-break"
+                value="4"
+                min="1"
+                max="999"
+              />
+              <p>sessions</p>
+            </div>
+          </div>
+          <div class="set-container">
+            <p>Auto-Restart Timer</p>
+            <label class="switch">
+              <input type="checkbox" id="auto-restart-toggle" checked />
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
+        <!-- Sound settings content -->
+        <div id="alarm-sound" class="show-content">
+          <h1 class="menu-title">Sound</h1>
+          <label for="select-alarm">Select alarm sound:</label>
+          <select name="alarm-sound-select" id="select-alarm">
+            <option value="Bell">Bell</option>
+            <option value="FirePager">Fire pager</option>
+            <option value="ModernRingtone">Modern Ringtone</option>
+            <option value="TornadoSiren">Tornado siren (you sure?)</option>
+          </select>
+          <audio id="Bell" src="../alarm-sound/Bell.mp3"></audio>
+          <audio id="FirePager" src="../alarm-sound/Fire-Pager.mp3"></audio>
+          <audio
+            id="ModernRingtone"
+            src="../alarm-sound/Modern-Ringtone.mp3"
+          ></audio>
+          <audio
+            id="TornadoSiren"
+            src="../alarm-sound/Tornado-Siren.mp3"
+          ></audio>
+          <div id="toggle-alert">
+            <label class="switch">
+              <input type="checkbox" checked />
+              <span class="slider round"></span>
+            </label>
+            <p>Play alarm when timer ends</p>
+          </div>
+          <div id="volume-alert">
+            <label for="vol-alert">Alert volume:</label>
+            <input
+              type="range"
+              name="volume-alert"
+              id="vol-alert"
+              min="0"
+              max="100"
+              value="50"
+            />
+            <label for="vol-song">Song volume:</label>
+            <input
+              type="range"
+              name="volume-song"
+              id="vol-song"
+              min="0"
+              max="100"
+              value="50"
+            />
+            <audio id="alarm-audio" src="../alarm-sound/Fire-Pager.mp3"></audio>
+          </div>
+        </div>
+        <!-- Stats content -->
+        <div id="session-info" class="show-content">
+          <h1 class="menu-title">Stats</h1>
+          <p>Pomodoro Sessions:<span id="pomodoro-session-count">0</span></p>
+          <p>Short Breaks: <span id="short-break-count">0</span></p>
+          <p>Long Breaks: <span id="long-break-count">0</span></p>
+          <div id="session-history"></div>
+          <div id="history-button-container">
+            <span class="material-symbols-outlined delete-session">delete</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <span class="material-symbols-outlined close-btn">close</span>
+      </div>
+    </div>
+  </body>
+</html>
