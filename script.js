@@ -225,7 +225,6 @@ document.addEventListener("DOMContentLoaded", () => {
     Bell: document.querySelector("#Bell"),
     FirePager: document.querySelector("#FirePager"),
     ModernRingtone: document.querySelector("#ModernRingtone"),
-    TornadoSiren: document.querySelector("#TornadoSiren"),
   };
 
   settButton.addEventListener("click", () => {
