@@ -68,7 +68,7 @@ body {
 }
 
 main {
-  width: clamp(50%, 750px, 80%);
+  width: clamp(70%, 750px, 80%);
   height: 100vh;
   display: flex;
   flex-direction: column;
