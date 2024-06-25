@@ -68,21 +68,22 @@ body {
 }
 
 main {
-  width: 100%;
+  width: clamp(50%, 750px, 80%);
   height: 100vh;
-  margin: auto;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 0 10px;
+  margin: auto;
 }
 
 main > div {
   width: 100%;
-  margin: 5px 0;
+  margin: 2.5px 0;
 }
 
 #title-container {
-  margin-top: 20px;
   text-align: center;
   padding: 5px;
 }
