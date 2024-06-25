@@ -89,7 +89,7 @@ main > div {
 }
 
 #title-container h1 {
-  font-size: clamp(3rem, 5vw, 5rem);
+  font-size: clamp(3rem, 5vw, 6.25rem);
   margin: 12.5px 0;
   background: var(--col-gradient);
   background-clip: text;
