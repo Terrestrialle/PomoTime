@@ -68,13 +68,13 @@ body {
 }
 
 main {
-  width: clamp(70%, 750px, 80%);
+  width: clamp(70%, 750px, 85%);
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
-  padding: 10px;
+  justify-content: center;
+  padding: 25px;
   margin: auto;
 }
 
